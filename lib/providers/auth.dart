@@ -17,8 +17,10 @@ import '../style/colors.dart';
 import 'fetch_and_post.dart';
 
 class Auth with ChangeNotifier {
-  String? _token, pid, phone, uN;
-
+  var _token;
+  var pid;
+  var uN;
+  var phone;
   bool isLoading = false;
 
   final Map<String, String> _userData = {
@@ -152,13 +154,12 @@ class Auth with ChangeNotifier {
           Navigator.of(context).pushReplacement(MaterialPageRoute(
               builder: (BuildContext context) => BottomNav2()));
           Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (BuildContext context) => Container()
-              // RestaurantRegistatrationPage(
-              //   latitude: savedLocationLat,
-              //   longitude: savedLocationLon,
-              // ),
-            ),
+            MaterialPageRoute(builder: (BuildContext context) => Container()
+                // RestaurantRegistatrationPage(
+                //   latitude: savedLocationLat,
+                //   longitude: savedLocationLon,
+                // ),
+                ),
           );
         } else {
           Navigator.of(context).pop();
